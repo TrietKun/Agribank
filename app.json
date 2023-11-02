@@ -1,7 +1,12 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "Agribank",
     "slug": "Agribank",
+=======
+    "name": "App",
+    "slug": "App",
+>>>>>>> 48affde (Initial commit)
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
