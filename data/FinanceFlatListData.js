@@ -8,7 +8,7 @@ var financeList = [
     {
         title: 'Chuyển khoản',
         img: require('../assets/TC1.png'),
-        onPress: () => {navigationInstance.navigate('Thông tin')}
+        onPress: () => {navigationInstance.navigate('Chuyển khoản')}
     },
     {
         title: 'Nạp tiền điện thoại',

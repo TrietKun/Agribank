@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet,FlatList } from 'react-native'
 import React from 'react'
-import Item from '../components/item'
+import Item from '../components/Item'
 import { useNavigation } from '@react-navigation/native';
 import StockData , {setNavigationInstance}from '../data/StockData'
 

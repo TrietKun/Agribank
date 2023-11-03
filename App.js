@@ -13,6 +13,7 @@ import CardService from './screens/CardServiceScreen';
 import LoginScreen from './screens/LoginScreen';
 import PayOderScreen from './screens/PayOderScreen';
 import StockScreen from './screens/StockScreen';
+import TransferScreen from './screens/TransferScreen';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -68,6 +69,7 @@ function App() {
         <Stack.Screen name="Dịch vụ thẻ" component={CardService} />
         <Stack.Screen name="Thanh toán hóa đơn" component={PayOderScreen} />
         <Stack.Screen name="Chứng khoán" component={StockScreen} />
+        <Stack.Screen name="Chuyển khoản" component={TransferScreen} />
       </Stack.Navigator>
   </NavigationContainer>
   );

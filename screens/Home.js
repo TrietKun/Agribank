@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { ScrollView, View, Text, StyleSheet,Image,Dimensions,TouchableOpacity,FlatList } from 'react-native';
-import IconHome from '../components/iconHome';
-import IconHomeFinance from '../components/iconHomeFinance';
+import IconHome from '../components/IconHome';
+import IconHomeFinance from '../components/IconHomeFinance';
 import  Swiper  from 'react-native-swiper/src';
 import { useNavigation } from '@react-navigation/native';
 

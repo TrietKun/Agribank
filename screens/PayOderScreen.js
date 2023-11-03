@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet,FlatList,Image } from 'react-native'
 import React from 'react'
-import Item from '../components/item'
+import Item from '../components/Item'
 import PayOderData from '../data/PayOderFlatListData'
 export default function CardService() {
   return (
