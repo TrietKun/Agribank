@@ -1,17 +1,25 @@
 import { View, Text,StyleSheet,FlatList } from 'react-native'
 import React from 'react'
 import Item from '../components/item'
-import ExtensionFlatListData from '../data/ExtensionFlatListData'
+import { useNavigation } from '@react-navigation/native';
+import StockData , {setNavigationInstance}from '../data/StockData'
+
 export default function StockScreen() {
+
+  const navigation = useNavigation();
+  setNavigationInstance(navigation);
+
   return (
+ 
     <View style={styles.container}>
-      
+      <View>
       <FlatList style={styles.flatListItem}
-                        data={ExtensionFlatListData}
+                        data={StockData}
                         renderItem={({ item }) => <Item option={item}  />}
                         numColumns={3}
-                        contentContainerStyle={{ justifyContent: 'space-between', alignSelf: 'center' }}
+                        contentContainerStyle={{ justifyContent: 'space-between'}}
                         scrollEnabled={false} />
+      </View>
     </View>
   )
 }
@@ -21,16 +29,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#dce4e4',
     },
-    headerContainer : {
-        width : '100%',
-        height : 50,
-        backgroundColor : '#dce4e4',
-        textAlign : 'center',
-        justifyContent : 'center',
-    },
     flatListItem : {
-      width : '100%',
-      height : 'fit-content',
-      alignContent : 'center',
+      height : 200,
+      marginTop : 10,
+      marginHorizontal : 10,
     }
 })
