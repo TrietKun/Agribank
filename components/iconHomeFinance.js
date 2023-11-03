@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, ImageBackground, Image, TextInput, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 export default function MainOptionComponent(props){
+    const navigation = useNavigation();
+
     const {option, onPress} = props;
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
@@ -15,15 +18,14 @@ export default function MainOptionComponent(props){
 const styles = StyleSheet.create({ 
     container: {
         borderRadius: 10,
-        margin: 10,
+        margin: 5,
         width: 110,
-        height: 90,
-        position: 'relative',
+        height: 120,
         alignItems: 'center',
     },
     img: {  
-        width: 60,
-        height: 60,
+        width: 50,
+        height: 50,
         margin: 10,
     },
     title: {
@@ -32,6 +34,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginHorizontal:10,
         textAlignVertical: 'center',
-        width: 100,
+        width: '100%',
     },
 })

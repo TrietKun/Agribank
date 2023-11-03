@@ -17,14 +17,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 1,
         width: 120,
-        height: 130,
+        height: 100,
         backgroundColor: 'white',
         position: 'relative',
         alignItems: 'center',
+        margin: 4,
     },
     img: {  
-        width: 70,
-        height: 70,
+        width: 40,
+        height: 40,
         margin: 10,
     },
     title: {

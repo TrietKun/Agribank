@@ -9,8 +9,10 @@ import CustomDrawerContent from './navigation/DrawerCustom';
 import InfScreen from './screens/InfScreen';
 import SearchScreen from './screens/SearchScreen';
 import Home from './screens/Home';
-import CardService from './screens/CardService';
+import CardService from './screens/CardServiceScreen';
 import LoginScreen from './screens/LoginScreen';
+import PayOderScreen from './screens/PayOderScreen';
+import StockScreen from './screens/StockScreen';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -64,6 +66,8 @@ function App() {
         <Stack.Screen name="Thông tin" component={InfScreen} options={{headerShown : false}} />
         <Stack.Screen name="Đăng nhập" component={LoginScreen} options={{headerShown : false}} />
         <Stack.Screen name="Dịch vụ thẻ" component={CardService} />
+        <Stack.Screen name="Thanh toán hóa đơn" component={PayOderScreen} />
+        <Stack.Screen name="Chứng khoán" component={StockScreen} />
       </Stack.Navigator>
   </NavigationContainer>
   );

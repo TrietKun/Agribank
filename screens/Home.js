@@ -3,16 +3,19 @@ import { ScrollView, View, Text, StyleSheet,Image,Dimensions,TouchableOpacity,Fl
 import IconHome from '../components/iconHome';
 import IconHomeFinance from '../components/iconHomeFinance';
 import  Swiper  from 'react-native-swiper/src';
+import { useNavigation } from '@react-navigation/native';
 
-import FinanceFlatListData from '../data/FinanceFlatListData';
+import FinanceFlatListData, {setNavigationInstance}  from '../data/FinanceFlatListData';
 import ShoppingFlatListData from '../data/ShopingFlatListData';
 import ExtensionFlatListData from '../data/ExtensionFlatListData';
 
 const widowHeight = Dimensions.get('window').height;
 const widowWidth = Dimensions.get('window').width;
 
-export default function Home({navigation}) {
+export default function Home() {
 
+    const navigation = useNavigation();
+    setNavigationInstance(navigation);
     const openDrawer = () => {
         navigation.openDrawer();
       };
@@ -41,7 +44,9 @@ export default function Home({navigation}) {
         },
         
     
-    ]
+    ]   
+    
+
 
   return (
    <View style={styles.container}>
@@ -118,11 +123,14 @@ export default function Home({navigation}) {
                 <View style={styles.finance}>
                     <FlatList style={styles.flatListfinance}
                         data={FinanceFlatListData}
-                        renderItem={({ item }) => <IconHomeFinance option={item} />}
+                        renderItem={({ item }) => <IconHomeFinance option={item} 
+                        onPress={item.onPress}
+                         />}
                         numColumns={3}
                         contentContainerStyle={{ justifyContent: 'space-between', paddingHorizontal: 20 }}
                         scrollEnabled={false} />
                 </View>
+                
                 <View style={styles.buy}>
                     <FlatList style={styles.flatListBuy}
                         data={ShoppingFlatListData}
@@ -149,7 +157,9 @@ export default function Home({navigation}) {
                 <View style={styles.extension}>
                     <FlatList style={styles.flatListExtension}
                         data={ExtensionFlatListData}
-                        renderItem={({ item }) => <IconHomeFinance option={item}  />}
+                        renderItem={({ item }) => <IconHomeFinance option={item}  
+                            // onPress={navigation.navigate('Thông tin')}
+                        />}
                         numColumns={3}
                         contentContainerStyle={{ justifyContent: 'space-between', paddingHorizontal: 20 }}
                         scrollEnabled={false} />
@@ -186,7 +196,7 @@ const styles = StyleSheet.create({
     },
     scrollContainer : {
         width: widowWidth,
-        height: '35%',
+        height: '31%',
         backgroundColor: 'transparent',
         zIndex: 2,
     },
@@ -288,7 +298,6 @@ const styles = StyleSheet.create({
         color : 'white'
     },
     flatList : {
-        position: 'sticky',
         backgroundColor : 'transparent',
         position : 'relative',
         zIndex : 3,
@@ -333,7 +342,7 @@ const styles = StyleSheet.create({
     },
     finance : {
         width : '100%',
-        height : 480,
+        height : 540,
         backgroundColor : 'transparent',
         alignItems : 'center',
         justifyContent : 'center',
@@ -342,7 +351,6 @@ const styles = StyleSheet.create({
         position: 'sticky',
         backgroundColor : 'transparent',
         position : 'relative',
-        zIndex : 3,
         borderBottomRightRadius : '20%',
     },
     buy : {
@@ -358,7 +366,6 @@ const styles = StyleSheet.create({
         position: 'sticky',
         backgroundColor : 'transparent',
         position : 'relative',
-        zIndex : 3,
 
     },
     extension : {
@@ -372,7 +379,6 @@ const styles = StyleSheet.create({
         position: 'sticky',
         backgroundColor : 'transparent',
         position : 'relative',
-        zIndex : 3,
 
     },
 });
