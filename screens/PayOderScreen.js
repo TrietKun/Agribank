@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet,FlatList,Image } from 'react-native'
 import React from 'react'
-import Item from '../components/Item'
+import Item from '../components/Itemm'
 import PayOderData from '../data/PayOderFlatListData'
 export default function CardService() {
   return (
@@ -16,12 +16,12 @@ export default function CardService() {
       <View style={styles.odersContainer}>
         <View style={styles.title}>
             <Image style={{width : 30, height : 30}} source={require('../assets/hoadon.png')}></Image>
-            <Text><b>Hóa đơn của quý khách</b></Text>
+            <Text>Hóa đơn của quý khách</Text>
         </View>
         <View style={styles.content}>
           <Image style={{width : 70, height : 70}} source={require('../assets/notebg.png')}/>
           <Text style={styles.titleContent}>
-            <b>Quý khách chưa lưu thông tin hóa đơn,</b><br/>
+            Quý khách chưa lưu thông tin hóa đơn,
             Hãy "Lưu thông tin hóa đơn" để tiết kiệm thời gian cho các lần thanh toán tiếp theo
           </Text>
         </View>

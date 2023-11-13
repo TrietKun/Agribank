@@ -1,28 +1,29 @@
-import { View, Text ,StyleSheet,Image,TouchableOpacity} from 'react-native'
+import { View, Text ,StyleSheet,Image,TouchableOpacity,SafeAreaView} from 'react-native'
 import React from 'react'
 
 
 export default function InfScreen({navigation}) {
   return (
-    <View style={styles.container}>
+   <SafeAreaView style={{marginTop : 30}}>
+     <View style={styles.container}>
       <View style={styles.nav}>
-            THÔNG TIN TÀI KHOẢN
+            <Text style={{paddingLeft : 100}}>THÔNG TIN TÀI KHOẢN</Text>
             <TouchableOpacity style={styles.iconLeftArrow} onPress={()=>{navigation.navigate('Trang chủ')}}>
                 <Image style={styles.iconLeftArrow} source={require('../assets/icons8-left-50.png')}></Image>
             </TouchableOpacity>
       </View>
       <View style={styles.balanceTop}>
         <Image style={styles.iconCredit} source={require('../assets/credit.png')}></Image>
-          Tài khoản thanh toán
+          <Text>Tài khoản thanh toán</Text>
       </View>
       <View style={styles.balanceBottom}>
             <View style={styles.accountNumberContainer}>
-                <Text style={{color: '#de7508', fontSize : 15}}>
+                <Text style={{color: '#de7508', fontSize : 15, marginLeft : 30}}>
                     4494935353 
-                    <TouchableOpacity style={styles.iconCopy}>
+                </Text>
+                <TouchableOpacity style={styles.iconCopy}>
                         <Image style={styles.iconCopy} source={require('../assets/icons8-copy-64.png')}></Image>
                     </TouchableOpacity>
-                </Text>
             </View>
             <View style={styles.accountNumberContainer}>
                 <Text style={{fontSize : 15}}>
@@ -41,10 +42,11 @@ export default function InfScreen({navigation}) {
                     <Text>Tài khoản tiết kiệm</Text>                
                 </View>
                 <TouchableOpacity style={styles.viewDetail}>
-                    Xem chi tiết
+                    <Text>Xem chi tiết</Text>
                 </TouchableOpacity>
             </View>
     </View>
+   </SafeAreaView>
   )
 }
 const styles = StyleSheet.create({
@@ -59,7 +61,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#de7508',
         width: '100%',
         height: 50,
-        color: '#fff',
         textAlign: 'center',
         justifyContent: 'center',
         fontFamily : 'sans-serif',
@@ -67,10 +68,8 @@ const styles = StyleSheet.create({
     iconLeftArrow: {
         width: 40,
         height: 40,
-        color: '#fff',
         position: 'absolute',
         left: 0,
-        selfVertical: 'center',
         marginLeft: 10,
     },
     balanceTop : {

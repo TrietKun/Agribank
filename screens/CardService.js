@@ -1,12 +1,12 @@
 import { View, Text,StyleSheet,FlatList } from 'react-native'
 import React from 'react'
-import Item from '../components/item'
+import Item from '../components/Itemm'
 import ExtensionFlatListData from '../data/ExtensionFlatListData'
 export default function CardService() {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        Dịch vụ áp dụng cho khách hàng có <b>Thẻ Agribank</b>
+        <Text>Dịch vụ áp dụng cho khách hàng có Thẻ Agribank</Text>
       </View>
       <FlatList style={styles.flatListItem}
                         data={ExtensionFlatListData}

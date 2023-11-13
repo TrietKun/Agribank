@@ -9,11 +9,11 @@ export default function ItemList(props){
             source={option.img}
             ></Image>
             <View style={{paddingLeft : 20}}>
-                <Text style={styles.title}><b>{option.title}</b></Text>
+                <Text style={styles.title}>{option.title}</Text>
                 <Text style={styles.title}>{option.stk}</Text>
             </View>
             <TouchableOpacity style={styles.option}>
-                        ⋮
+                       <Text>⋮</Text> 
             </TouchableOpacity>
         </View>
     )
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         width: 50,
         height: 50,
-        borderRadius: '50%',
+        borderRadius: 25,
         backgroundColor: 'white',
     },
     title: {

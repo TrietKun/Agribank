@@ -1,7 +1,7 @@
 import { View, Text,StyleSheet,FlatList ,Image} from 'react-native'
 import React from 'react'
 import ItemList from '../components/ItemList'
-import Item from '../components/Item'
+import Item from '../components/Itemm'
 import { useNavigation } from '@react-navigation/native';
 import TransferData , {setNavigationInstance}from '../data/TransferData'
 
@@ -24,7 +24,7 @@ export default function TransferScreen() {
       <View style={styles.odersContainer}>
         <View style={styles.title}>
             <Image style={{width : 30, height : 30}} source={require('../assets/hoadon.png')}></Image>
-            <Text><b>Danh sách thụ hưởng</b></Text>
+            <Text>Danh sách thụ hưởng</Text>
         </View>
         <View style={styles.content}>
         <FlatList style={styles.flatListItem}
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius : 10,
         borderBottomWidth : 1,
         borderStyle : 'dashed',
-        top : 430,
+        top : 430
       },
       content : {
         width : '100%',
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius : 10,
         alignItems : 'center',
         paddingTop : 0,
-        top : 430,
+        top : 430
       },
       titleContent : {
         color : 'gray',

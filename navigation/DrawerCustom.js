@@ -1,6 +1,8 @@
 // CustomDrawerContent.js
 import React from 'react';
 import { View, Text, TouchableOpacity,StyleSheet ,Image} from 'react-native';
+import { Ionicons} from '@expo/vector-icons';
+
 
 function CustomDrawerContent({navigation}) {
     const navigateToScreen = (screenName) => {
@@ -20,47 +22,48 @@ function CustomDrawerContent({navigation}) {
         <TouchableOpacity style={styles.LoginButton}
           onPress={() => navigateToScreen('Đăng nhập')}
         >
-            Đăng nhập
+            <Text>Đăng nhập</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+        <Ionicons name="code-working-outline" size={32} color="#e0721b"/>
         <Text style={{paddingLeft : 10}}>Cài đặt Soft OTP</Text>
+        
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="chatbox-ellipses-outline" size={32} color="#e0721b"></Ionicons>
         <Text style={{paddingLeft : 10}}>Nhận tin biến động số dư</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="finger-print-outline" size={32} color="#e0721b"></Ionicons>
         <Text style={{paddingLeft : 10}}>Cài đặt vân tay</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="calculator-outline" size={32} color="#e0721b"></Ionicons>
         <Text style={{paddingLeft : 10}}>Cài đặt hạn mức chuyển khoản</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="language" size={32} color="#e0721b" />
         <Text style={{paddingLeft : 10}}>Cài đặt ngôn ngữ</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="lock-open-outline" size={32} color="#e0721b"></Ionicons>        
         <Text style={{paddingLeft : 10}}>Đổi mật khẩu</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="key-outline" size={32} color="#e0721b"></Ionicons>
         <Text style={{paddingLeft : 10}}>Cấp/Đổi mã PIN</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="card-outline" size={32} color="#e0721b"></Ionicons>
         <Text style={{paddingLeft : 10}}>Quản lý nickname</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="book-outline" size={32} color="#e0721b"/>
         <Text style={{paddingLeft : 10}}>Quản lý danh bạ</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.itemDrawer} onPress={() => navigateToScreen('Home')}>
-        <Image style={styles.imgItem} source={require('../assets/icons8-piggy-64.png')}></Image>
+      <Ionicons name="trash-outline" size={32} color="#e0721b"/>
         <Text style={{paddingLeft : 10}}>Đóng tài khoản</Text>
       </TouchableOpacity>
     </View>

@@ -4,6 +4,7 @@ import IconHome from '../components/IconHome';
 import IconHomeFinance from '../components/IconHomeFinance';
 import  Swiper  from 'react-native-swiper/src';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons} from '@expo/vector-icons';
 
 import FinanceFlatListData, {setNavigationInstance}  from '../data/FinanceFlatListData';
 import ShoppingFlatListData from '../data/ShopingFlatListData';
@@ -52,13 +53,10 @@ export default function Home() {
    <View style={styles.container}>
         <View style={styles.bg}>
             <Image style={styles.image} source={require('../assets/Icon-Agribank.png')}></Image>
-        </View>
-        <View style={styles.headerContainer}>
+            <View style={styles.headerContainer}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Tìm kiếm')}}>
-                <Image style={styles.findIcon}
-                    source={require('../assets/findIcon.png')}
-                ></Image>
+                <TouchableOpacity style={styles.drawerButton} onPress={()=>{navigation.navigate('Tìm kiếm')}}>
+                    <Ionicons name="search-sharp" size={32} color="#2e755d"></Ionicons>
                 </TouchableOpacity>
                 <View style={styles.logoHeader}>
                     <Image style={{width : 150, height : 20}}
@@ -66,9 +64,7 @@ export default function Home() {
                     ></Image>
                 </View>
                 <TouchableOpacity style={styles.drawerButton} onPress={openDrawer}>
-                    <Image style={styles.findIcon}
-                        source={require('../assets/drawer.png')}
-                    ></Image>
+                <Ionicons name="reorder-three-sharp" size={32} color="#2e755d"></Ionicons>
                 </TouchableOpacity>
             </View>
         </View>
@@ -86,7 +82,7 @@ export default function Home() {
                     <TouchableOpacity style={styles.loginButton}
                         onPress={()=>{navigation.navigate('Đăng nhập')}}
                     >
-                        Đăng nhập
+                        <Text>Đăng nhập</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.options}>
@@ -117,7 +113,7 @@ export default function Home() {
                 <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
                     <Text>Tài chính</Text>
                     <TouchableOpacity style={{color : '#e0721b'}}>
-                        Xem thêm
+                        <Text>Xem thêm</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.finance}>
@@ -139,6 +135,7 @@ export default function Home() {
                         contentContainerStyle={{ justifyContent: 'space-between', paddingHorizontal: 20 }}
                         scrollEnabled={false} />
                 </View>
+                <View style={styles.swipContainer}>
                 <Swiper
                     dotColor="#BBBBBB"
                     activeDotColor="white"
@@ -153,7 +150,8 @@ export default function Home() {
                             <Image source={image.imageUrl} style={styles.imageSwiper} />
                         </View>
                     ))}
-                </Swiper> 
+                </Swiper>                  
+                </View> 
                 <View style={styles.extension}>
                     <FlatList style={styles.flatListExtension}
                         data={ExtensionFlatListData}
@@ -166,6 +164,9 @@ export default function Home() {
                 </View>
             </ScrollView> 
         </View>
+        </View>
+        
+        
    </View>
 
 
@@ -185,9 +186,9 @@ const styles = StyleSheet.create({
         height: widowHeight,
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'fixed',
-        top: 0,
-        zIndex: -1,
+        // position: 'fixed',
+        // top: 0,
+        // zIndex: -1,
     },
     image : {
         width: 200,
@@ -196,9 +197,12 @@ const styles = StyleSheet.create({
     },
     scrollContainer : {
         width: widowWidth,
-        height: '31%',
+        // height: '31%',
+        height: '90%',
         backgroundColor: 'transparent',
-        zIndex: 2,
+        // zIndex: 2,
+        position: 'absolute',
+        top: 30
     },
     scroll : {
         width: widowWidth,
@@ -212,9 +216,10 @@ const styles = StyleSheet.create({
         width: widowWidth,
         height: 50,
         backgroundColor : 'white',
-        position : 'fixed', 
+        position : 'absolute', 
         zIndex : 3,
         alignItems : 'center',
+        top : 30
     },
     header : {
         width : '90%',
@@ -243,10 +248,10 @@ const styles = StyleSheet.create({
         backgroundColor : 'red'
     },
     drawerButton : {
-        width : 30,
-        height : 30,
+        width : 40,
+        height : 40,
         backgroundColor : '#dce4e4',
-        borderRadius : 15,
+        borderRadius : 20,
         alignItems : 'center',
         justifyContent : 'center'
     },
@@ -278,7 +283,7 @@ const styles = StyleSheet.create({
         width : 80,
         height : 80,
         backgroundColor : 'white',
-        borderRadius : '50%',
+        borderRadius : 40,
         justifyContent : 'space-around',
         alignItems : 'center',
         position : 'absolute',
@@ -311,29 +316,24 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
     },
     swipContainer : {
-        width: '100%',
-        height: 150,
-        backgroundColor: 'pink',
-        top: 0,
-        alignContent : 'center',
-        flex : 1,
-        posotion : 'absolute',
-        zIndex : 4,
-    },
-    swipSwapper : {
         width: '90%',
         height: 150,
         backgroundColor: 'pink',
         top: 0,
         alignContent : 'center',
-        flex : 1,
+        // flex : 1,
+        // posotion : 'absolute',
+        alignSelf : 'center',
+        zIndex : 4,
+    },
+    swipSwapper : {
+       
+        backgroundColor: 'pink',
 
     },
     slide : {
         width : '100%',
-        height : '100%',
-        position : 'absolute',
-        position : 'sticky',
+        height : 150,
     },
     imageSwiper : {
         width : '100%',
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
         position: 'sticky',
         backgroundColor : 'transparent',
         position : 'relative',
-        borderBottomRightRadius : '20%',
+        borderBottomRightRadius : 20,
     },
     buy : {
         width : '100%',
@@ -359,8 +359,8 @@ const styles = StyleSheet.create({
         backgroundImage: 'linear-gradient(#ebf6f0 0%, #f3f5e7 80%, #f4f1de 100%)',
         alignItems : 'center',
         justifyContent : 'center',
-        borderTopLeftRadius : '20%',
-        borderBottomEndRadius : '20%',
+        borderTopLeftRadius : 20,
+        borderBottomEndRadius : 20,
     },
     flatListBuy : {
         position: 'sticky',

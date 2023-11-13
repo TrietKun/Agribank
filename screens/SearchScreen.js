@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet, TextInput,TouchableOpacity,Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput,TouchableOpacity,Image,SafeAreaView } from 'react-native'
 import React from 'react'
 
 export default function SearchScreen({navigation}) {
   return (
-    <View style={styles.container}>
+   <SafeAreaView>
+     <View style={styles.container}>
         <View style={styles.searchContainer}>
             <View style={styles.inputContainer}>
                 <View style={styles.searchIcon}>
@@ -12,23 +13,24 @@ export default function SearchScreen({navigation}) {
                 <TextInput style={styles.textInput}></TextInput>
             </View>
             <TouchableOpacity style={styles.closeButton} onPress={()=>{navigation.navigate('Trang chủ')}}>
-                Đóng
+                <Text>Đóng</Text>
             </TouchableOpacity>
         </View>
         <View style={styles.title}>
             <Text style={{fontWeight : 'bold'}}>Chức năng nổi bật</Text>
         </View>
         <View style={styles.tipContainer}>
-            <View style={styles.tip}>Chuyển khoản</View>
-            <View style={styles.tip}>Thanh toán hóa đơn</View>
-            <View style={styles.tip}>Nhận tin biến động số dư</View>
-            <View style={styles.tip}>Cài đặt Soft OTP</View>
+            <View style={styles.tip}><Text>Chuyển khoản</Text></View>
+            <View style={styles.tip}><Text>Thanh toán hóa đơn</Text></View>
+            <View style={styles.tip}><Text>Nhận tin biến động số dư</Text></View>
+            <View style={styles.tip}><Text>Cài đặt Soft OTP</Text></View>
         </View>
         <View style={styles.note}>
-            Lưu ý : Quý khách có thể tìm kiếm chức năng , dịch vụ , 
-            danh bạ thụ hưởng , mẫu thanh toán hóa đơn ...
+        <Text>Lưu ý : Quý khách có thể tìm kiếm chức năng , dịch vụ , 
+            danh bạ thụ hưởng , mẫu thanh toán hóa đơn ...</Text>
         </View>
     </View>
+   </SafeAreaView>
   )
 }
 
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         backgroundColor: '#fff',
+        marginTop : 30,
     },
     searchContainer : {
         width : '100%',

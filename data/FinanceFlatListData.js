@@ -23,7 +23,7 @@ var financeList = [
     {
         title: 'Mã thẻ/Data',
         img: require('../assets/TC4.png'),
-        onPress: 'Thông tin'
+        onPress: () => {navigationInstance.navigate('Thông tin')}
     },
     {
         title: 'Tiền gửi trực tuyến',
