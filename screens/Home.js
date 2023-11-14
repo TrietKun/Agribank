@@ -6,6 +6,7 @@ import  Swiper  from 'react-native-swiper/src';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons} from '@expo/vector-icons';
 
+
 import FinanceFlatListData, {setNavigationInstance}  from '../data/FinanceFlatListData';
 import ShoppingFlatListData from '../data/ShopingFlatListData';
 import ExtensionFlatListData from '../data/ExtensionFlatListData';
@@ -164,9 +165,8 @@ export default function Home() {
                 </View>
             </ScrollView> 
         </View>
+        
         </View>
-        
-        
    </View>
 
 
@@ -355,8 +355,9 @@ const styles = StyleSheet.create({
     },
     buy : {
         width : '100%',
-        height : 450,
-        backgroundImage: 'linear-gradient(#ebf6f0 0%, #f3f5e7 80%, #f4f1de 100%)',
+        height : 510,
+        // backgroundImage: 'linear-gradient(#ebf6f0 0%, #f3f5e7 80%, #f4f1de 100%)',
+        backgroundColor: 'linear-gradient(rgba(235, 246, 240, 0) 0%, rgba(243, 245, 231, 0.8) 80%, rgba(244, 241, 222, 1) 100%)',
         alignItems : 'center',
         justifyContent : 'center',
         borderTopLeftRadius : 20,

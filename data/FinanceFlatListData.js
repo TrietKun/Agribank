@@ -13,7 +13,7 @@ var financeList = [
     {
         title: 'Nạp tiền điện thoại',
         img: require('../assets/TC2.png'),
-        onPress: () => {navigationInstance.navigate('Thông tin')}
+        onPress: () => {navigationInstance.navigate('Nạp tiền điện thoại')}
     },
     {
         title: 'Thanh toán hóa đơn',

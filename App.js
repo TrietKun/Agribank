@@ -14,6 +14,7 @@ import LoginScreen from './screens/LoginScreen';
 import PayOderScreen from './screens/PayOderScreen';
 import StockScreen from './screens/StockScreen';
 import TransferScreen from './screens/TransferScreen';
+import PhoneRecharge from './screens/PhoneRecharge';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -70,6 +71,7 @@ function App() {
         <Stack.Screen name="Thanh toán hóa đơn" component={PayOderScreen} />
         <Stack.Screen name="Chứng khoán" component={StockScreen} />
         <Stack.Screen name="Chuyển khoản" component={TransferScreen} />
+        <Stack.Screen name="Nạp tiền điện thoại" component={PhoneRecharge} />
       </Stack.Navigator>
   </NavigationContainer>
   );
