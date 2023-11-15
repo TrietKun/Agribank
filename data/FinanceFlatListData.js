@@ -28,7 +28,7 @@ var financeList = [
     {
         title: 'Tiền gửi trực tuyến',
         img: require('../assets/piggy.png'),
-        onPress: 'Thông tin'
+        onPress: () => {navigationInstance.navigate('Tiền gửi trực tuyến')}
     },
     {
         title: 'Chứng khoán',
