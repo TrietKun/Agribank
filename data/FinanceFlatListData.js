@@ -43,7 +43,7 @@ var financeList = [
     {
         title: 'Gửi tiền mừng',
         img: require('../assets/thiep.png'),
-        onPress: 'Thông tin'
+        onPress: () => {navigationInstance.navigate('Gửi tiền mừng')}
     },
     {
         title: 'Nhận tiền kiều hối',
