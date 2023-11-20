@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import { ScrollView, View, Text, StyleSheet,Image,Dimensions,TouchableOpacity,FlatList } from 'react-native';
 import IconHome from '../components/IconHome';
 import IconHomeFinance from '../components/IconHomeFinance';
 import  Swiper  from 'react-native-swiper/src';
 import { useNavigation } from '@react-navigation/native';
+import {useRoute} from '@react-navigation/native';
 import { Ionicons} from '@expo/vector-icons';
-
+import axios from 'axios';
 
 import FinanceFlatListData, {setNavigationInstance}  from '../data/FinanceFlatListData';
 import ShoppingFlatListData from '../data/ShopingFlatListData';
@@ -15,8 +16,37 @@ const widowHeight = Dimensions.get('window').height;
 const widowWidth = Dimensions.get('window').width;
 
 export default function Home() {
-
     const navigation = useNavigation();
+    const route = useRoute();
+    const idAPI = route.params;
+
+    const url = 'https://655080547d203ab6626ddba7.mockapi.io/nh'+ idAPI;
+
+    const [onLogin, setOnLogin] = useState([]);
+
+    const getData  = async() => {
+        try{
+              const response = await axios.get(url);
+                setOnLogin(response.data);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            // Logic cần được thực hiện khi màn hình nhận được sự tập trung
+            console.log('route in Home:', route);
+            console.log('route.params in Home:', route.params);
+            const idAPI = route.params?.idAPI;
+            console.log('idAPI in Home:', idAPI);
+            getData();
+          });
+      
+          return unsubscribe;
+          }, [navigation, route]);
+
     setNavigationInstance(navigation);
     const openDrawer = () => {
         navigation.openDrawer();
@@ -51,6 +81,7 @@ export default function Home() {
 
 
   return (
+    
    <View style={styles.container}>
         <View style={styles.bg}>
             <Image style={styles.image} source={require('../assets/Icon-Agribank.png')}></Image>

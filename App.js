@@ -28,7 +28,7 @@ const Stack = createNativeStackNavigator();
 function BottomTabNavigator() {
   return (
     <Tab.Navigator >
-      <Tab.Screen name="Trang chủ" component={LoginScreen}   options={{
+      <Tab.Screen name="Trang chủ" component={Home}   options={{
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
       <Ionicons name="home-outline" size={size} color={color} />

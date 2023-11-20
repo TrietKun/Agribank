@@ -1,6 +1,8 @@
 import { faBorderNone } from '@fortawesome/free-solid-svg-icons';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 import {
     Text,
     View,
@@ -14,7 +16,51 @@ import {
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
+
+
+
 export default function Login() {   
+    const navigation = useNavigation();
+    const [data, setData] = useState([]);
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+
+    const getData  = async() => {
+        try{
+           const response = await axios.get('https://655080547d203ab6626ddba7.mockapi.io/nh');
+            setData(response.data);
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+
+        getData();
+    }, []);
+    
+    console.log(data);
+    console.log(phone);
+    console.log(password);
+
+    
+
+    function login() {
+        console.log('Login function called'); // Kiểm tra xem hàm login có được gọi không
+        console.log('Data:', data); // Kiểm tra dữ liệu từ API
+      
+        const user = data.find(item => item.phone === phone && item.pass === password);
+      
+        if (user) {
+          const id = user.id;
+          navigation.navigate('Home', { idAPI: id });
+          console.log('User ID:', id);
+        } else {
+          console.log('User not found');
+        }
+      }
+      
+      
     return (
         <View style={styles.background}>
             <StatusBar barStyle="light-content"/>
@@ -31,14 +77,14 @@ export default function Login() {
                     <View style={styles.inputContainer}>
                         <View style={styles.inputRow}>
                             <TextInput 
-                            onFocus={() => {
-                                borderWidth : 0
-                              }}
+                            onChangeText={(text) => {setPhone(text)}}
                             placeholder='Số điện thoại' style={styles.input} />
                         </View>
                         <View style={styles.inputRow}>
                             <View style={styles.passwordInput}>
-                                <TextInput placeholder='Mật khẩu' style={styles.passwordTextInput} secureTextEntry={true} />
+                                <TextInput 
+                                onChangeText={(text) => {setPassword(text)}}
+                                placeholder='Mật khẩu' style={styles.passwordTextInput} secureTextEntry={true} />
                                 <TouchableOpacity style={styles.showPasswordIcon}>
                                     <Image style={styles.icon} source={require("../assets/no-view.png")} />
                                 </TouchableOpacity>
@@ -47,7 +93,10 @@ export default function Login() {
                     </View>
                     <View style={styles.LoginContaier}>
                         <TouchableOpacity style={[styles.loginButton]}
-                           
+                          onPress={() => {
+                            console.log('Button pressed'); // Kiểm tra xem sự kiện onPress có được kích hoạt không
+                            login(); // Gọi hàm login
+                          }}
                         >
                             <Text style={styles.loginButtonText}>Đăng nhập</Text>
                         </TouchableOpacity>

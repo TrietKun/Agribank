@@ -4,19 +4,22 @@ import ItemList from '../components/ItemList'
 import Item from '../components/Itemm'
 import { useNavigation } from '@react-navigation/native';
 import TransferData , {setNavigationInstance}from '../data/TransferData'
+import ItemCK from '../components/ItemCK'
 
 export default function TransferScreen() {
 
   const navigation = useNavigation();
   setNavigationInstance(navigation);
 
+
+  
   return (
  
     <View style={styles.container}>
       <View>
       <FlatList style={styles.flatListItem}
                         data={TransferData}
-                        renderItem={({ item }) => <Item option={item}  />}
+                        renderItem={({ item }) => <ItemCK option={item}  />}
                         numColumns={3}
                         contentContainerStyle={{ justifyContent: 'space-between'}}
                         scrollEnabled={false} />
@@ -54,8 +57,8 @@ const styles = StyleSheet.create({
     },
     odersContainer : {
         width : '95%',
-        height : 430,
-        top : 10,
+        height : 530,
+        top : -90,
         alignSelf : 'center',
         alignItems : 'center',
         position : 'fixed',
