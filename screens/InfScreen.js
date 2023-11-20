@@ -1,8 +1,16 @@
 import { View, Text ,StyleSheet,Image,TouchableOpacity,SafeAreaView} from 'react-native'
 import React from 'react'
-
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+import { useState, useEffect } from 'react';
+import {useRoute} from '@react-navigation/native'
 
 export default function InfScreen({navigation}) {
+
+const route = useRoute();
+const data = route.params;
+console.log(data.data.tien);
+const tien = data.data.tien.toLocaleString('vi-VN');
   return (
    <SafeAreaView style={{marginTop : 30}}>
      <View style={styles.container}>
@@ -27,7 +35,7 @@ export default function InfScreen({navigation}) {
             </View>
             <View style={styles.accountNumberContainer}>
                 <Text style={{fontSize : 15}}>
-                    Số dư : 1.000.000.000 VND
+                    Số dư : {tien} VND
                 </Text>
                 <TouchableOpacity style={styles.iconQr}>
                     <Image style={styles.iconQr} source={require('../assets/icons8-qr-code-24.png')}></Image>
@@ -114,7 +122,6 @@ const styles = StyleSheet.create({
         width : 20,
         height : 20,
         position : 'absolute',
-        marginLeft : 10,
     },
     iconQr : {
         width : 20,

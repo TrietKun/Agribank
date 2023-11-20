@@ -1,25 +1,34 @@
-import { View, Text,StyleSheet,FlatList ,Image} from 'react-native'
+import { View, Text,StyleSheet,FlatList ,Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import ItemList from '../components/ItemList'
 import Item from '../components/Itemm'
 import { useNavigation } from '@react-navigation/native';
 import TransferData , {setNavigationInstance}from '../data/TransferData'
 import ItemCK from '../components/ItemCK'
+import {useState,useEffect} from 'react'
+import {useRoute} from '@react-navigation/native'
+
 
 export default function TransferScreen() {
 
   const navigation = useNavigation();
   setNavigationInstance(navigation);
+  const route = useRoute();
+  const data = route.params;
 
-
-  
   return (
  
     <View style={styles.container}>
-      <View>
+      <View style={{width : '100%', height : 250}}>
       <FlatList style={styles.flatListItem}
                         data={TransferData}
-                        renderItem={({ item }) => <ItemCK option={item}  />}
+                        renderItem={({ item }) => (
+                          <TouchableOpacity
+                            onPress={() => navigation.navigate(item.screen,{data : data})}
+                          >
+                            <ItemCK option={item} />
+                          </TouchableOpacity>
+                        )}
                         numColumns={3}
                         contentContainerStyle={{ justifyContent: 'space-between'}}
                         scrollEnabled={false} />
@@ -47,22 +56,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         backgroundColor: '#dce4e4',
+        position: 'fixed',
     },
     flatListItem : {
         width : '100%',
-        height : 'fit-content',
-        marginHorizontal : 10,
-        position : 'relative',
-        zindex : 1,
     },
     odersContainer : {
         width : '95%',
-        height : 530,
-        top : -90,
+        height : '70%',
         alignSelf : 'center',
         alignItems : 'center',
-        position : 'fixed',
-        zIndex : 2,
+        marginTop : 10,
       },
       title : {
         width : '100%',
@@ -73,7 +77,6 @@ const styles = StyleSheet.create({
         borderTopLeftRadius : 10,
         borderBottomWidth : 1,
         borderStyle : 'dashed',
-        top : 430
       },
       content : {
         width : '100%',
@@ -83,7 +86,6 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius : 10,
         alignItems : 'center',
         paddingTop : 0,
-        top : 430
       },
       titleContent : {
         color : 'gray',

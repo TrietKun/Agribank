@@ -18,6 +18,7 @@ import PhoneRecharge from './screens/PhoneRecharge';
 import SavingMoneyScreen from './screens/SavingMonneyScreen';
 import GiftScreen from './screens/GiftScreen'; 
 import TestScreen from './screens/TestScreen';
+import Transfer from './screens/Transfer';
 
 import { Ionicons } from '@expo/vector-icons'; // Sử dụng thư viện icon phù hợp với dự án của bạn
 
@@ -28,7 +29,7 @@ const Stack = createNativeStackNavigator();
 function BottomTabNavigator() {
   return (
     <Tab.Navigator >
-      <Tab.Screen name="Trang chủ" component={Home}   options={{
+      <Tab.Screen name="Trang chủ" component={LoginScreen}   options={{
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
       <Ionicons name="home-outline" size={size} color={color} />
@@ -40,7 +41,7 @@ function BottomTabNavigator() {
       <Ionicons name="notifications" size={size} color={color} />
     ),
   }} />
-      <Tab.Screen name = "VnShop" component={SearchScreen}   options={{
+      <Tab.Screen name = "Home" component={Home}   options={{
     headerShown: false,
     tabBarIcon: ({ color, size }) => (
       <Ionicons name="cart-outline" size={size} color={color} />
@@ -104,6 +105,8 @@ function App() {
         <Stack.Screen name="Nạp tiền điện thoại" component={PhoneRecharge} />
         <Stack.Screen name="Tiền gửi trực tuyến" component={SavingMoneyScreen} />
         <Stack.Screen name="Gửi tiền mừng" component={GiftScreen} />
+        <Stack.Screen name="Chuyển" component={Transfer} />
+
       </Stack.Navigator>
   </NavigationContainer>
   );

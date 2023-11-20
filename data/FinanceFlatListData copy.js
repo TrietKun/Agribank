@@ -9,32 +9,32 @@ var financeList = [
     {
         title: 'Chuyển khoản',
         img: require('../assets/tranfer.png'),
-        onPress: () => {navigationInstance.navigate('Chuyển khoản')}
+        onPress: 'Chuyển khoản'
     },
     {
         title: 'Nạp tiền điện thoại',
         img: require('../assets/phoneRecharge.png'),
-        onPress: () => {navigationInstance.navigate('Nạp tiền điện thoại')}
+        onPress: 'Nạp tiền điện thoại'
     },
     {
         title: 'Thanh toán hóa đơn',
         img: require('../assets/bill.png'),
-        onPress: () => {navigationInstance.navigate('Thanh toán hóa đơn')}
+        onPress: 'Thanh toán hóa đơn'
     },
     {
         title: 'Mã thẻ/Data',
         img: require('../assets/data.png'),
-        onPress: () => {navigationInstance.navigate('Thông tin')}
+        onPress: 'Thông tin'
     },
     {
         title: 'Tiền gửi trực tuyến',
         img: require('../assets/piggy.png'),
-        onPress: () => {navigationInstance.navigate('Tiền gửi trực tuyến')}
+        onPress: 'Tiền gửi trực tuyến'
     },
     {
         title: 'Chứng khoán',
         img: require('../assets/stock.png'),
-        onPress: () => {navigationInstance.navigate('Chứng khoán')}
+        onPress: 'Chứng khoán'
     },
     {
         title: 'Nạp tiền dịch vụ',
@@ -44,7 +44,7 @@ var financeList = [
     {
         title: 'Gửi tiền mừng',
         img: require('../assets/thiep.png'),
-        onPress: () => {navigationInstance.navigate('Gửi tiền mừng')}
+        onPress: 'Gửi tiền mừng'
     },
     {
         title: 'Nhận tiền kiều hối',

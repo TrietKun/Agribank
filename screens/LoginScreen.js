@@ -35,7 +35,6 @@ export default function Login() {
         }
     }
     useEffect(() => {
-
         getData();
     }, []);
     
@@ -52,9 +51,8 @@ export default function Login() {
         const user = data.find(item => item.phone === phone && item.pass === password);
       
         if (user) {
-          const id = user.id;
-          navigation.navigate('Home', { idAPI: id });
-          console.log('User ID:', id);
+          navigation.navigate('Home', { data: user });
+          console.log('User name:', user);
         } else {
           console.log('User not found');
         }
