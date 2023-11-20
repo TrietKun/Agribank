@@ -17,6 +17,9 @@ import TransferScreen from './screens/TransferScreen';
 import PhoneRecharge from './screens/PhoneRecharge';
 import SavingMoneyScreen from './screens/SavingMonneyScreen';
 import GiftScreen from './screens/GiftScreen'; 
+import TestScreen from './screens/TestScreen';
+
+import { Ionicons } from '@expo/vector-icons'; // Sử dụng thư viện icon phù hợp với dự án của bạn
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -25,11 +28,36 @@ const Stack = createNativeStackNavigator();
 function BottomTabNavigator() {
   return (
     <Tab.Navigator >
-      <Tab.Screen name="Trang chủ" component={Home} options={{headerShown : false}} />
-      <Tab.Screen name="Thông báo" component={InfScreen} options={{headerShown : false}} />
-      <Tab.Screen name = "VnShop" component={SearchScreen} options={{headerShown : false}}/>
-      <Tab.Screen name = "Gọi Taxi" component={SearchScreen} options={{headerShown : false}}/>
-      <Tab.Screen name = "Lịch sử GD" component={SearchScreen} options={{headerShown : false}}/>
+      <Tab.Screen name="Trang chủ" component={LoginScreen}   options={{
+      headerShown: false,
+      tabBarIcon: ({ color, size }) => (
+      <Ionicons name="home-outline" size={size} color={color} />
+    ),
+  }} />
+      <Tab.Screen name="Thông báo" component={InfScreen}   options={{
+    headerShown: false,
+    tabBarIcon: ({ color, size }) => (
+      <Ionicons name="notifications" size={size} color={color} />
+    ),
+  }} />
+      <Tab.Screen name = "VnShop" component={SearchScreen}   options={{
+    headerShown: false,
+    tabBarIcon: ({ color, size }) => (
+      <Ionicons name="cart-outline" size={size} color={color} />
+    ),
+  }}/>
+      <Tab.Screen name = "Gọi Taxi" component={SearchScreen}   options={{
+    headerShown: false,
+    tabBarIcon: ({ color, size }) => (
+      <Ionicons name="car-sport-outline" size={size} color={color} />
+    ),
+  }}/>
+      <Tab.Screen name = "Lịch sử GD" component={SearchScreen}   options={{
+    headerShown: false,
+    tabBarIcon: ({ color, size }) => (
+      <Ionicons name="time-outline" size={size} color={color} />
+    ),
+  }}/>
     </Tab.Navigator>
   );
 }

@@ -6,9 +6,19 @@ export default function GiftScreen() {
     <View style={styles.container}>
         <View style={styles.header}></View>
         <View style={styles.coverContainer}>
+            <View style={{width : 250, height : 190, alignSelf : 'center',
+                            marginTop : -200,       
+                            borderWidth : 1,
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.8,
+                            shadowRadius: 4,
+                            elevation: 5,
+                            shadowColor: '#000'
+        }}>
             <Image 
                 style={styles.img} 
                 source={require('../assets/tmt.png')}/>
+            </View>
         </View>
         <TouchableOpacity 
             style={{width : 250, 
@@ -21,7 +31,8 @@ export default function GiftScreen() {
                     }}>
             <Text style={{fontWeight : 'bold',
                         color : 'white',
-                        fontSize : 20
+                        fontSize : 20,
+                        textAlign : 'center'
                 }}>Gửi tiền mừng</Text>
         </TouchableOpacity>
         <TouchableOpacity 
@@ -36,7 +47,8 @@ export default function GiftScreen() {
                     }}>
             <Text style={{fontWeight : 'bold',
                         color : '#e0721b',
-                        fontSize : 20
+                        fontSize : 20,
+                        textAlign : 'center'
                 }}>Tiền mừng của tôi</Text>
         </TouchableOpacity>
     </View>
@@ -68,10 +80,8 @@ const styles = StyleSheet.create({
         alignItems : 'center',
     }, 
     img :{
-        width : 250,
-        height : 150,
-        alignSelf : 'center',
-        position : 'absolute',
-        marginTop : -200,
+        width : '100%',
+        height : '100%',
+        borderWidth : 2
     }
 })

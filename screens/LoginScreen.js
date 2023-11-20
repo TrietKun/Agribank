@@ -1,3 +1,4 @@
+import { faBorderNone } from '@fortawesome/free-solid-svg-icons';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
@@ -29,13 +30,15 @@ export default function Login() {
                     </View>
                     <View style={styles.inputContainer}>
                         <View style={styles.inputRow}>
-                            <Text style={styles.inputLabel}>Số điện thoại</Text>
-                            <TextInput style={styles.input} />
+                            <TextInput 
+                            onFocus={() => {
+                                borderWidth : 0
+                              }}
+                            placeholder='Số điện thoại' style={styles.input} />
                         </View>
                         <View style={styles.inputRow}>
-                            <Text style={styles.inputLabel}>Mật khẩu</Text>
                             <View style={styles.passwordInput}>
-                                <TextInput style={styles.passwordTextInput} secureTextEntry={true} />
+                                <TextInput placeholder='Mật khẩu' style={styles.passwordTextInput} secureTextEntry={true} />
                                 <TouchableOpacity style={styles.showPasswordIcon}>
                                     <Image style={styles.icon} source={require("../assets/no-view.png")} />
                                 </TouchableOpacity>
@@ -119,24 +122,19 @@ const styles = StyleSheet.create({
     },
     input: {
         height: '100%',
-        width: '70%',
+        width: '100%',
         borderBottomWidth: 2,
-        borderLeftWidth: 2,
-        textAlign: 'right',
-        color: '#00FF33'
     },
     passwordInput: {
         flexDirection: 'row',
-        width: '70%',
+        width: '100%',
         height: '100%',
         borderBottomWidth: 2,
-        borderLeftWidth: 2,
         alignItems: 'center',
     },
     passwordTextInput: {
         flex: 1,
         height: '100%',
-        color: '#00FF33',
     },
     showPasswordIcon: {
         width: 30,
