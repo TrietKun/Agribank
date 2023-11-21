@@ -19,6 +19,11 @@ import SavingMoneyScreen from './screens/SavingMonneyScreen';
 import GiftScreen from './screens/GiftScreen'; 
 import TestScreen from './screens/TestScreen';
 import Transfer from './screens/Transfer';
+import FianceScreen from './screens/FianceSreen';
+import SoftOTPScreen from './screens/SoftOTPScreen';
+import FaceIDScreen from './screens/FaceIDScreen';
+import LimitedTranferScreen from './screens/LimitedTranferScreen';
+import RePasswordScreen from './screens/RePasswordScreen';
 
 import { Ionicons } from '@expo/vector-icons'; // Sử dụng thư viện icon phù hợp với dự án của bạn
 
@@ -32,7 +37,7 @@ function BottomTabNavigator() {
       <Tab.Screen name="Trang chủ" component={LoginScreen}   options={{
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
-      <Ionicons name="home-outline" size={size} color={color} />
+      <Ionicons name="log-in" size={size} color={color} />
     ),
   }} />
       <Tab.Screen name="Thông báo" component={InfScreen}   options={{
@@ -44,7 +49,7 @@ function BottomTabNavigator() {
       <Tab.Screen name = "Home" component={Home}   options={{
     headerShown: false,
     tabBarIcon: ({ color, size }) => (
-      <Ionicons name="cart-outline" size={size} color={color} />
+      <Ionicons name="home-outline" size={size} color={color} />
     ),
   }}/>
       <Tab.Screen name = "Gọi Taxi" component={SearchScreen}   options={{
@@ -94,6 +99,7 @@ function App() {
           },
         }}
       >
+        
         <Stack.Screen name="Trang chủ" component={DrawerNav} options={{headerShown : false}} />
         <Stack.Screen name="Tìm kiếm" component={SearchScreen} options={{headerShown : false}} />
         <Stack.Screen name="Thông tin" component={InfScreen} options={{headerShown : false}} />
@@ -106,7 +112,11 @@ function App() {
         <Stack.Screen name="Tiền gửi trực tuyến" component={SavingMoneyScreen} />
         <Stack.Screen name="Gửi tiền mừng" component={GiftScreen} />
         <Stack.Screen name="Chuyển" component={Transfer} />
-
+        <Stack.Screen name="Tài chính" component={FianceScreen} />
+        <Stack.Screen name="Cài đặt Soft Otp" component={SoftOTPScreen} />
+        <Stack.Screen name="Cài đặt Face ID" component={FaceIDScreen} />
+        <Stack.Screen name="Cài đặt hạn mức chuyển khoản" component={LimitedTranferScreen} />
+        <Stack.Screen name="Cài đặt mật khẩu" component={RePasswordScreen} />
       </Stack.Navigator>
   </NavigationContainer>
   );

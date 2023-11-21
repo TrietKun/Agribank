@@ -128,7 +128,7 @@ export default function Home() {
                 </View>
                 <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
                     <Text>Tài chính</Text>
-                    <TouchableOpacity style={{color : '#e0721b'}}>
+                    <TouchableOpacity style={{color : '#e0721b'}} onPress={()=>{navigation.navigate('Tài chính')}}>
                         <Text>Xem thêm</Text>
                     </TouchableOpacity>
                 </View>
@@ -150,7 +150,9 @@ export default function Home() {
                     scrollEnabled={false}
                 />
                 </View>
-                
+                <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
+                    <Text style ={{fontSize:16,fontWeight:5}}>Mua sắm</Text>
+                </View>
                 <View style={styles.buy}>
                     <FlatList style={styles.flatListBuy}
                         data={ShoppingFlatListData}
@@ -176,11 +178,16 @@ export default function Home() {
                     ))}
                 </Swiper>                  
                 </View> 
+                <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
+                    <Text style ={{fontSize:16,fontWeight:5,color:'orange'}}>Tiện ích</Text>
+                </View>
                 <View style={styles.extension}>
                     <FlatList style={styles.flatListExtension}
                         data={ExtensionFlatListData}
                         renderItem={({ item }) => <IconHomeFinance option={item}  
-                            // onPress={navigation.navigate('Thông tin')}
+                        onPress={() => {
+                            navigation.navigate(item.onPress, { data: data });
+                        }}
                         />}
                         numColumns={3}
                         contentContainerStyle={{ justifyContent: 'space-between', paddingHorizontal: 20 }}
