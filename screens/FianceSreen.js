@@ -7,16 +7,16 @@ const { StyleSheet,
 import React,{Component} from "react";
 import { FlatList, ScrollView } from "react-native-web";
 export  default FianceScreen;
-import FianceOptionComponent from "../component/FianceOptionComponent";
+import FianceOptionComponent from "../components/FianceOptionComponent";
 
 function FianceScreen(props) {
     return(<View style={styles.container}>
         <ScrollView style={styles.scroll} bounces= {false} >
-            <View style={styles.header}>
+            {/* <View style={styles.header}>
                 <Image style={styles.img} source={require('../assets/fiancescreen/TCh1.jpg')}/>
                 <Text style={styles.title}>TÀI CHÍNH</Text>
                 <Text style={[{'fontSize':16},{'color':'#e17700'},{'textAlign':'right'},{'marginLeft':110},{'fontWeight':'bold'}]}>Sửa</Text>
-            </View>
+            </View> */}
             <View style={styles.bodyCNDHT}>
                 <Text style={[{'fontSize':14},{'color':'black'},{'textAlign':'left'},{'marginLeft':10},{'fontWeight':'bold'}]}>Chức năng hiển thị</Text>
                 <View style={styles.options}>

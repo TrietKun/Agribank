@@ -62,7 +62,7 @@ export default function Login() {
     return (
         <View style={styles.background}>
             <StatusBar barStyle="light-content"/>
-            <SafeAreaView> 
+            <SafeAreaView style={{marginTop : 30}}> 
                 <View style={styles.container}>
                 <TouchableOpacity style={{position : 'absolute', right : 0}} 
                     onPress={() => {navigation.navigate('Home')}}
@@ -211,9 +211,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     loginButtonText: {
+        width: '100%',
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        textAlign: 'center',
     },
     iconButton: {
         width: 50,
