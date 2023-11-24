@@ -13,46 +13,30 @@ import {
     Image,
     StyleSheet,
 } from 'react-native';
+import Reducer, { setUser } from '../redux/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers } from '../redux/userSlice';
+
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
 
-
-
 export default function Login() {   
     const navigation = useNavigation();
-    const [data, setData] = useState([]);
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+    const users = useSelector((state) => state.user);
 
-    const getData  = async() => {
-        try{
-           const response = await axios.get('https://655080547d203ab6626ddba7.mockapi.io/nh');
-            setData(response.data);
-
-        }catch(error){
-            console.log(error);
-        }
-    }
-    useEffect(() => {
-        getData();
-    }, []);
-    
-    console.log(data);
-    console.log(phone);
-    console.log(password);
-
-    
 
     function login() {
         console.log('Login function called'); // Kiểm tra xem hàm login có được gọi không
-        console.log('Data:', data); // Kiểm tra dữ liệu từ API
-      
-        const user = data.find(item => item.phone === phone && item.pass === password);
-      
+        console.log('Data:', users.value); // Kiểm tra dữ liệu từ API
+        const user = users.value.find(item => item.phone === phone && item.pass === password);
         if (user) {
-          navigation.navigate('Home', { data: user });
-          console.log('User name:', user);
+            dispatch(setUser(user));
+            navigation.push('Trang chủ');
+          console.log('Login success');
         } else {
           console.log('User not found');
         }
@@ -163,7 +147,7 @@ const styles = StyleSheet.create({
     },
     inputLabel: {
         width: '30%',
-        textAlignVertical: 'center',
+        verticalAlign: 'center',
         marginLeft: 5,
         color: '#00FF33'
     },

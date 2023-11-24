@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native/src';
+import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs/src';
 import {  createNativeStackNavigator} from '@react-navigation/native-stack/src'
@@ -24,6 +24,8 @@ import SoftOTPScreen from './screens/SoftOTPScreen';
 import FaceIDScreen from './screens/FaceIDScreen';
 import LimitedTranferScreen from './screens/LimitedTranferScreen';
 import RePasswordScreen from './screens/RePasswordScreen';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 
 import { Ionicons } from '@expo/vector-icons'; // Sử dụng thư viện icon phù hợp với dự án của bạn
 
@@ -34,7 +36,8 @@ const Stack = createNativeStackNavigator();
 function BottomTabNavigator() {
   return (
     <Tab.Navigator >
-      <Tab.Screen name="Trang chủ" component={LoginScreen}   options={{
+      <Tab.Screen name="Trang chủ" component={Home}   
+      options={{
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
       <Ionicons name="log-in" size={size} color={color} />
@@ -46,12 +49,12 @@ function BottomTabNavigator() {
       <Ionicons name="notifications" size={size} color={color} />
     ),
   }} />
-      <Tab.Screen name = "Home" component={Home}   options={{
+      {/* <Tab.Screen name = "Home" component={Home}   options={{
     headerShown: false,
     tabBarIcon: ({ color, size }) => (
       <Ionicons name="home-outline" size={size} color={color} />
     ),
-  }}/>
+  }}/> */}
       <Tab.Screen name = "Gọi Taxi" component={SearchScreen}   options={{
     headerShown: false,
     tabBarIcon: ({ color, size }) => (
@@ -87,7 +90,8 @@ function DrawerNav() {
 
 function App() {
   return (
-    <NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
@@ -119,6 +123,7 @@ function App() {
         <Stack.Screen name="Cài đặt mật khẩu" component={RePasswordScreen} />
       </Stack.Navigator>
   </NavigationContainer>
+  </Provider>
   );
 }
 export default App;

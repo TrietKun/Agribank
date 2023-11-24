@@ -7,15 +7,14 @@ import TransferData , {setNavigationInstance}from '../data/TransferData'
 import ItemCK from '../components/ItemCK'
 import {useState,useEffect} from 'react'
 import {useRoute} from '@react-navigation/native'
-
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function TransferScreen() {
 
   const navigation = useNavigation();
   setNavigationInstance(navigation);
-  const route = useRoute();
-  const data = route.params;
-
+  const user = useSelector((state) => state.user.value);
+  console.log(user);
   return (
  
     <View style={styles.container}>
@@ -24,7 +23,7 @@ export default function TransferScreen() {
                         data={TransferData}
                         renderItem={({ item }) => (
                           <TouchableOpacity
-                            onPress={() => navigation.navigate(item.screen,{data : data})}
+                            onPress={() => navigation.navigate(item.screen)}
                           >
                             <ItemCK option={item} />
                           </TouchableOpacity>

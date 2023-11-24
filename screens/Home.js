@@ -9,6 +9,10 @@ import {useRoute} from '@react-navigation/native';
 import { Ionicons} from '@expo/vector-icons';
 import axios from 'axios';
 
+import store from '../redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers } from '../redux/userSlice';
+
 import FinanceFlatListData, {setNavigationInstance}  from '../data/FinanceFlatListData';
 import ShoppingFlatListData from '../data/ShopingFlatListData';
 import ExtensionFlatListData from '../data/ExtensionFlatListData';
@@ -19,17 +23,9 @@ const widowWidth = Dimensions.get('window').width;
 
 export default function Home() {
     const navigation = useNavigation();
-    const route = useRoute();
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
-            const data = route.params;
-            console.log('onLogin in Home:', data.data);
-            setData(data.data);
-          });
-      
-          return unsubscribe;
-          }, [route]);
+    const dispatch = useDispatch();
+    const users = useSelector((state) => state.user);
+    const data = users.value;
 
     setNavigationInstance(navigation);
     const openDrawer = () => {
@@ -46,7 +42,7 @@ export default function Home() {
         {
             title: 'Tài khoản',
             img: require('../assets/core1.png'),
-            onPress: () => navigation.navigate('Thông tin', { data: data }),
+            onPress: () => navigation.navigate('Thông tin', [ { data : data }]),
         },
         {
             title: 'QR Pay',
@@ -96,7 +92,11 @@ export default function Home() {
                         <Image style={styles.avataIcon}source={require('../assets/iconAvata.png')}/>
                     </View>
                     <TouchableOpacity style={styles.loginButton}
-                        onPress={()=>{navigation.navigate('Đăng nhập')}}
+                        
+                        onPress={()=>{
+                            dispatch(fetchUsers());
+                            navigation.navigate('Đăng nhập')
+                        }}
                     >
                         <Text>Đăng nhập</Text>
                     </TouchableOpacity>
@@ -139,7 +139,7 @@ export default function Home() {
                     renderItem={({ item }) => (
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate(item.onPress, { data: data });
+                                navigation.navigate(item.onPress, [{ data: data }]);
                             }}
                         >
                             <IconHome1 option={item} />
@@ -186,7 +186,7 @@ export default function Home() {
                         data={ExtensionFlatListData}
                         renderItem={({ item }) => <IconHomeFinance option={item}  
                         onPress={() => {
-                            navigation.navigate(item.onPress, { data: data });
+                            navigation.navigate(item.onPress, [{ data: data }]);
                         }}
                         />}
                         numColumns={3}
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         // zIndex: 2,
         position: 'absolute',
-        top: 30
+        top: 0
     },
     scroll : {
         width: widowWidth,
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
         position : 'absolute', 
         zIndex : 3,
         alignItems : 'center',
-        top : 30
+        top : 0
     },
     header : {
         width : '90%',
@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
     },
     extension : {
         width : '100%',
-        height : 510,
+        height : 530,
         backgroundColor : 'transparent',
         alignItems : 'center',
         justifyContent : 'center',

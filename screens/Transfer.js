@@ -6,22 +6,23 @@ import { useState, useEffect } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers, fetchUsserById, setUser } from '../redux/userSlice';
 export default function Transfer() {
 
   const navigation = useNavigation();
-  const route = useRoute();
-  const data = route.params;
+
   const [soTien, setSoTien] = useState(0);
   const [noiDung, setNoiDung] = useState('');
   const [soDienThoai, setSoDienThoai] = useState('');
   const [nguoiChuyen, setNguoiChuyen] = useState([]);
   const [nguoiNhan, setNguoiNhan] = useState([]);
   const [allData, setAllData] = useState([]);
+  const data =  useSelector((state) => state.user.value);
   const getDataChuyen  = async() => {
     try{
-        const response = await axios.get('https://655080547d203ab6626ddba7.mockapi.io/nh/'+data.data.data.id);
-       setNguoiChuyen(response.data);
+        const response = await axios.get('https://655080547d203ab6626ddba7.mockapi.io/nh/'+data.id);
+        setNguoiChuyen(response.data);
     }catch(error){
         console.log(error);
     }
@@ -46,6 +47,8 @@ function chuyenTien(){
     if(nguoiNhan.tien >= soTien){
       const tienNguoiChuyen = parseFloat(nguoiChuyen.tien) - parseFloat(soTien);
       const tienNguoiNhan = parseFloat(nguoiNhan.tien) + parseFloat(soTien);
+      console.log(tienNguoiChuyen);
+      console.log(tienNguoiNhan);
         axios.put('https://655080547d203ab6626ddba7.mockapi.io/nh/'+nguoiChuyen.id, {
             tien : tienNguoiChuyen
           })
@@ -65,18 +68,25 @@ function chuyenTien(){
           .catch(function (error) {
             console.log(error);
           });
+          navigation.navigate('Trang chủ');
     }
+    dispatch(fetchUsserById(nguoiChuyen.id));
+    dispatch(setUser(nguoiChuyen));
+    
 }
 
 useEffect(() => {
     getAll();
     getDataChuyen();
 
-}, [route]);
-
+}, []);
+console.log('nguoiChuyen');
 console.log(nguoiChuyen);
+console.log('allData');
 console.log(allData);
+console.log('nguoiNhan');
 console.log(nguoiNhan);
+
 
 
   return (

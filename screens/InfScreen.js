@@ -3,16 +3,15 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useState, useEffect } from 'react';
-import {useRoute} from '@react-navigation/native'
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function InfScreen({navigation}) {
 
-const route = useRoute();
-const data = route.params;
-console.log(data.data.tien);
-const tien = data.data.tien.toLocaleString('vi-VN');
+const user = useSelector((state) => state.user);
+
+const tien = user.value.tien.toLocaleString('vi-VN');
   return (
-   <SafeAreaView style={{marginTop : 30}}>
+   <SafeAreaView style={{marginTop : 0}}>
      <View style={styles.container}>
       <View style={styles.nav}>
             <Text style={{paddingLeft : 100}}>THÔNG TIN TÀI KHOẢN</Text>
