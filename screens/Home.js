@@ -9,6 +9,9 @@ import {useRoute} from '@react-navigation/native';
 import { Ionicons} from '@expo/vector-icons';
 import axios from 'axios';
 
+import NetInfo from '@react-native-community/netinfo';
+
+
 import store from '../redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../redux/userSlice';
@@ -25,6 +28,20 @@ export default function Home() {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     const users = useSelector((state) => state.user);
+
+    useEffect(() => {
+        const unsubscribe = NetInfo.addEventListener(state => {
+          if (!state.isConnected) {
+            // Mất kết nối mạng, chuyển sang màn hình đăng nhập
+            navigation.navigate('Đăng nhập');
+          } else {
+            // Đã kết nối mạng, kiểm tra và fetch dữ liệu người dùng
+          }
+        });
+        return () => {
+            unsubscribe();
+          };
+        }, []);
 
     if (users.value.length == 2 ) {
         console.log('null');
