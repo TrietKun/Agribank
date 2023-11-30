@@ -24,6 +24,7 @@ import SoftOTPScreen from './screens/SoftOTPScreen';
 import FaceIDScreen from './screens/FaceIDScreen';
 import LimitedTranferScreen from './screens/LimitedTranferScreen';
 import RePasswordScreen from './screens/RePasswordScreen';
+import NotificationScreen from './screens/NotificationScreen';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 
@@ -40,10 +41,10 @@ function BottomTabNavigator() {
       options={{
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
-      <Ionicons name="log-in" size={size} color={color} />
+      <Ionicons name="home-outline" size={size} color={color} />
     ),
   }} />
-      <Tab.Screen name="Thông báo" component={InfScreen}   options={{
+      <Tab.Screen name="Thông báo" component={NotificationScreen}   options={{
     headerShown: false,
     tabBarIcon: ({ color, size }) => (
       <Ionicons name="notifications" size={size} color={color} />
@@ -121,6 +122,7 @@ function App() {
         <Stack.Screen name="Cài đặt Face ID" component={FaceIDScreen} />
         <Stack.Screen name="Cài đặt hạn mức chuyển khoản" component={LimitedTranferScreen} />
         <Stack.Screen name="Cài đặt mật khẩu" component={RePasswordScreen} />
+        <Stack.Screen name="Thông báo" component={NotificationScreen} />
       </Stack.Navigator>
   </NavigationContainer>
   </Provider>
