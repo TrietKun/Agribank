@@ -75,7 +75,7 @@ export default CustomDrawerContent;
 const styles = StyleSheet.create({
     container : {
         width : '90%',
-        height : '88%',
+        height : '90%',
         borderRadius : 30,
         backgroundColor : 'white',
         alignSelf : 'center',
