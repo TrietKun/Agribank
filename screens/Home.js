@@ -4,7 +4,7 @@ import IconHome from '../components/IconHome';
 import IconHome1 from '../components/Itemm1';
 import IconHomeFinance from '../components/IconHomeFinance';
 import  Swiper  from 'react-native-swiper/src';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation  } from '@react-navigation/native';
 import {useRoute} from '@react-navigation/native';
 import { Ionicons} from '@expo/vector-icons';
 import axios from 'axios';
@@ -25,6 +25,12 @@ export default function Home() {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     const users = useSelector((state) => state.user);
+
+    if (users.value.length == 2 ) {
+        console.log('null');
+    }else{
+        console.log(users.value);
+    }
     const data = users.value;
 
     setNavigationInstance(navigation);
@@ -91,7 +97,9 @@ export default function Home() {
                     <View style={styles.avataIconBg}>
                         <Image style={styles.avataIcon}source={require('../assets/iconAvata.png')}/>
                     </View>
-                    <TouchableOpacity style={styles.loginButton}
+
+                    {users.value.length == 2 ? (
+                        <TouchableOpacity style={styles.loginButton}
                         
                         onPress={()=>{
                             dispatch(fetchUsers());
@@ -99,7 +107,16 @@ export default function Home() {
                         }}
                     >
                         <Text>Đăng nhập</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity>   
+                    ):(
+                        <Text
+                            style={{position : 'absolute', top : 50, alignSelf : 'center', fontSize : 16, fontWeight : 'bold'}}
+                        >Xin chào {users.value.name}</Text>
+                        )
+                    }
+
+
+                    
                 </View>
                 <View style={styles.options}>
                     <FlatList style={styles.flatList}
