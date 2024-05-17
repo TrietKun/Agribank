@@ -3,7 +3,7 @@
 ## Giới thiệu
 
 Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp toàn diện cho tất cả các nhu cầu tài chính của bạn. Với ứng dụng này, bạn có thể dễ dàng quản lý tài khoản, chuyển tiền, thanh toán hóa đơn và nhiều tính năng khác ngay trên điện thoại di động của mình.
-![width="300" height="200"](image-1.png)
+<img src="image-1.png" alt="Hình ảnh" width="200" height="400">
 ## Tính năng
 
 - **Quản lý tài khoản:** Xem số dư tài khoản, lịch sử giao dịch và chi tiết tài khoản của bạn.
