@@ -7,7 +7,7 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 ## Tính năng
 
 - **Quản lý tài khoản:** Xem số dư tài khoản, lịch sử giao dịch và chi tiết tài khoản của bạn.<br>
-![image](https://github.com/TrietKun/Agribank/assets/103935961/b0284ed6-2785-414e-a71a-33e6828c8f90){width=300px height=200px}
+![image](https://github.com/TrietKun/Agribank/assets/103935961/b0284ed6-2785-414e-a71a-33e6828c8f90){width=200 height=400}
 - **Chuyển tiền:** Thực hiện các giao dịch chuyển tiền nội bộ và liên ngân hàng một cách nhanh chóng và an toàn.<br>
 ![image](https://github.com/TrietKun/Agribank/assets/103935961/a407d06e-ef9b-45fa-be34-07972ed09327)  
 - **Thanh toán hóa đơn:** Thanh toán các hóa đơn điện, nước, internet, và nhiều loại hóa đơn khác chỉ với vài thao tác.<br>
