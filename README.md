@@ -3,7 +3,7 @@
 
 ## Giới thiệu
 
-Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp toàn diện cho tất cả các nhu cầu tài chính của bạn. Với ứng dụng này, bạn có thể dễ dàng quản lý tài khoản, chuyển tiền, thanh toán hóa đơn và nhiều tính năng khác ngay trên điện thoại di động của mình.
+Chào mừng bạn đến với Ứng dụng Ngân hàng Agribank, một giải pháp toàn diện cho tất cả các nhu cầu tài chính của bạn. Với ứng dụng này, bạn có thể dễ dàng quản lý tài khoản, chuyển tiền, thanh toán hóa đơn và nhiều tính năng khác ngay trên điện thoại di động của mình.
 <img src="image-1.png" alt="Hình ảnh" width="200" height="400">
 ## Tính năng
 
@@ -24,13 +24,13 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 ### iOS
 
 1. Mở App Store trên thiết bị của bạn.
-2. Tìm kiếm "Ngân hàng XYZ".
+2. Tìm kiếm "Ngân hàng Agribank".
 3. Nhấn vào biểu tượng ứng dụng và sau đó nhấn "Tải xuống" để cài đặt.
 
 ### Android
 
 1. Mở Google Play Store trên thiết bị của bạn.
-2. Tìm kiếm "Ngân hàng XYZ".
+2. Tìm kiếm "Ngân hàng Agribank".
 3. Nhấn vào biểu tượng ứng dụng và sau đó nhấn "Cài đặt".
 
 ## Hướng dẫn sử dụng
@@ -61,10 +61,10 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 ## Hỗ trợ
 
 Nếu bạn cần hỗ trợ, vui lòng liên hệ với chúng tôi qua:
-- **Email:** support@xyzbank.com
+- **Email:** support@Agribank.com
 - **Số điện thoại:** 1800-123-456
 
-Hoặc truy cập [trang hỗ trợ](https://www.xyzbank.com/support) của chúng tôi để biết thêm chi tiết.
+Hoặc truy cập [trang hỗ trợ](https://www.Agribank.com/support) của chúng tôi để biết thêm chi tiết.
 
 ## Đóng góp và Phát triển
 
