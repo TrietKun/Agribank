@@ -185,7 +185,7 @@ export default function Home() {
                 />
                 </View>
                 <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
-                    <Text style ={{fontSize:16,fontWeight:5}}>Mua sắm</Text>
+                    <Text style ={{fontSize:16,fontWeight:200}}>Mua sắm</Text>
                 </View>
                 <View style={styles.buy}>
                     <FlatList style={styles.flatListBuy}
@@ -213,7 +213,7 @@ export default function Home() {
                 </Swiper>                  
                 </View> 
                 <View style={{display : 'flex', flexDirection : "row", width : '90%', justifyContent : 'space-between', alignSelf : 'center', marginTop : 10}}>
-                    <Text style ={{fontSize:16,fontWeight:5,color:'orange'}}>Tiện ích</Text>
+                    <Text style ={{fontSize:16,fontWeight:200,color:'orange'}}>Tiện ích</Text>
                 </View>
                 <View style={styles.extension}>
                     <FlatList style={styles.flatListExtension}
@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
     container : {
         width: widowWidth,
         height: 'fit-content',
+        marginTop : 30,
     },
     bg:{
         width: widowWidth,
