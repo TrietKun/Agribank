@@ -6,17 +6,16 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 <img src="image-1.png" alt="Hình ảnh" width="200" height="400">
 ## Tính năng
 
-- **Quản lý tài khoản:** Xem số dư tài khoản, lịch sử giao dịch và chi tiết tài khoản của bạn.
-
-- **Chuyển tiền:** Thực hiện các giao dịch chuyển tiền nội bộ và liên ngân hàng một cách nhanh chóng và an toàn.
-- **Thanh toán hóa đơn:** Thanh toán các hóa đơn điện, nước, internet, và nhiều loại hóa đơn khác chỉ với vài thao tác.
-- **Tiết kiệm trực tuyến:** Mở và quản lý các tài khoản tiết kiệm trực tuyến với lãi suất hấp dẫn.
-- **Thông báo giao dịch:** Nhận thông báo ngay lập tức cho mọi giao dịch thực hiện từ tài khoản của bạn.
-- **Bảo mật cao:** Sử dụng công nghệ mã hóa tiên tiến và xác thực hai yếu tố để bảo vệ tài khoản của bạn.
-
+- **Quản lý tài khoản:** Xem số dư tài khoản, lịch sử giao dịch và chi tiết tài khoản của bạn.<br>
+![image](https://github.com/TrietKun/Agribank/assets/103935961/b0284ed6-2785-414e-a71a-33e6828c8f90)
+- **Chuyển tiền:** Thực hiện các giao dịch chuyển tiền nội bộ và liên ngân hàng một cách nhanh chóng và an toàn.<br>
+![image](https://github.com/TrietKun/Agribank/assets/103935961/a407d06e-ef9b-45fa-be34-07972ed09327)  
+- **Thanh toán hóa đơn:** Thanh toán các hóa đơn điện, nước, internet, và nhiều loại hóa đơn khác chỉ với vài thao tác.<br>
+![image](https://github.com/TrietKun/Agribank/assets/103935961/2f98870f-2531-41cd-ba7e-6e2cac1f7495)
+- **Tiết kiệm trực tuyến:** Mở và quản lý các tài khoản tiết kiệm trực tuyến với lãi suất hấp dẫn.<br>
+![image](https://github.com/TrietKun/Agribank/assets/103935961/b0da3cb5-cb02-4d9e-8b3a-c84536596fd1)
 ## Yêu cầu hệ thống
 
-- **Hệ điều hành:** iOS 12.0 trở lên hoặc Android 5.0 trở lên
 - **Kết nối internet:** Wi-Fi hoặc kết nối dữ liệu di động ổn định
 
 ## Cài đặt
