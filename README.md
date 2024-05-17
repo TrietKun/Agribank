@@ -7,13 +7,13 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 ## Tính năng
 
 - **Quản lý tài khoản:** Xem số dư tài khoản, lịch sử giao dịch và chi tiết tài khoản của bạn.<br>
-![image](https://github.com/TrietKun/Agribank/assets/103935961/b0284ed6-2785-414e-a71a-33e6828c8f90){width=200 height=400}
+<img src="https://github.com/TrietKun/Agribank/assets/103935961/b0284ed6-2785-414e-a71a-33e6828c8f90" alt="image" width="200" height="400">
 - **Chuyển tiền:** Thực hiện các giao dịch chuyển tiền nội bộ và liên ngân hàng một cách nhanh chóng và an toàn.<br>
-![image](https://github.com/TrietKun/Agribank/assets/103935961/a407d06e-ef9b-45fa-be34-07972ed09327)  
+<img src="https://github.com/TrietKun/Agribank/assets/103935961/a407d06e-ef9b-45fa-be34-07972ed09327" alt="image" width="200" height="400">  
 - **Thanh toán hóa đơn:** Thanh toán các hóa đơn điện, nước, internet, và nhiều loại hóa đơn khác chỉ với vài thao tác.<br>
-![image](https://github.com/TrietKun/Agribank/assets/103935961/2f98870f-2531-41cd-ba7e-6e2cac1f7495)
+<img src="https://github.com/TrietKun/Agribank/assets/103935961/2f98870f-2531-41cd-ba7e-6e2cac1f7495" alt="image" width="200" height="400">
 - **Tiết kiệm trực tuyến:** Mở và quản lý các tài khoản tiết kiệm trực tuyến với lãi suất hấp dẫn.<br>
-![image](https://github.com/TrietKun/Agribank/assets/103935961/b0da3cb5-cb02-4d9e-8b3a-c84536596fd1)
+<img src="https://github.com/TrietKun/Agribank/assets/103935961/b0da3cb5-cb02-4d9e-8b3a-c84536596fd1" alt="image" width="200" height="400">
 ## Yêu cầu hệ thống
 
 - **Kết nối internet:** Wi-Fi hoặc kết nối dữ liệu di động ổn định
@@ -35,7 +35,11 @@ Chào mừng bạn đến với Ứng dụng Ngân hàng XYZ, một giải pháp
 ## Hướng dẫn sử dụng
 
 1. **Đăng ký/Đăng nhập:**
-   - Mở ứng dụng và chọn "Đăng ký" để tạo tài khoản mới hoặc "Đăng nhập" nếu bạn đã có tài khoản.
+   - Mở ứng dụng và chọn "Đăng ký" để tạo tài khoản mới hoặc "Đăng nhập" nếu bạn đã có tài khoản.<br>
+   <img src="https://github.com/TrietKun/Agribank/assets/103935961/7944f1db-b9fb-4eb1-bcc3-e30dae5532b7" alt="image" width="200" height="400">
+   <img src="https://github.com/TrietKun/Agribank/assets/103935961/31e07f41-94cc-4aef-9f4d-f8d1aafda4f4" alt="image" width="200" height="400">
+
+     
    - Nhập thông tin cần thiết và làm theo hướng dẫn để hoàn tất quy trình đăng ký hoặc đăng nhập.
 
 2. **Quản lý tài khoản:**
